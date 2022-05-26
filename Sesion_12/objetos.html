@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+    <p>Aprenderse metodos para manejar objetos</p>
+    <script>
+        let a = new String("Hola");
+        console.log(a)
+
+        const b = {}// es un objeto
+        console.log(b);
+        /*
+        const c = new Object();
+        console.log(c);
+        */
+        /* dentro de un objeto a las variables se le van a llamar atributos/propiedades y a las funciones se les llama métodos */
+            const cris = {
+            nombre: "Cris",
+            apellido: "Calvario",
+            edad: 22,
+            pasatiempos: ["Comer", "Hacer ejercicio", "escuchar musica"],
+            soltero: true,
+            contacto: {
+                email: "cris.margaretcs1518@gmail.com",
+                twitter: "@maggie",
+                movil: "2227161434"
+            },
+            saludar: function () {
+                console.log(`Bonjour monsiur`)
+            },
+            decirMiNombre: function () {
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter.`)
+            }
+            }
+            console.log(cris);
+            /*console.log(jon["nombre"]);
+            console.log(jon["apellido"]);*/
+
+           /* console.log(cris.nombre);
+            console.log(cris.apellido);
+            console.log(cris.edad);
+            console.log(cris.soltero);
+            console.log(cris.pasatiempos);
+            console.log(cris.pasatiempos[2]);
+            console.log(cris.contacto);
+            console.log(cris.contacto.twitter);*/
+            //cris.saludar();
+            //cris.decirMiNombre();
+            
+            console.log(Object.keys(cris));//muestra atributos
+            console.log(Object.values(cris));//muestra los valores de los atribbutos
+            // devuelve un valor booleano en caso de si este el valor
+            console.log(cris.hasOwnProperty("nombre"));
+            console.log(cris.hasOwnProperty("nacimiento"));
+        
+
+    </script>
+</body>
+</html>
