@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basicos</title>
+</head>
+<body>
+    <h1>Fundamentos de JavaScript</h1>
+
+    <p>videos del Curso 3 al 9</p>
+
+    <h2>3. var vs let</h2>
+     <p>
+        var hola ="Hola Mundo"; //Global <br>
+        let hello = "hello World"; //bloque
+     </p>
+    <script>
+        var hola ="Hola Mundo"; //Global
+        let hello = "hello World"; //bloque
+        console.log(hola);
+        console.log(hello);
+        console.log("************Var*************");
+        //Ambito GLOBAL
+        var musica = "Rock";
+        console.log("Variable Musica antes del bloque",musica);
+        {
+            var musica = "Pop";
+            console.log("Variable dentro del bloque",musica);
+        }
+        console.log("Variable despues del bloque",musica);
+        
+        //Ambito BLOQUE
+
+        console.log("****************let*****************");
+        let musica2 = "Rock";
+        console.log("Variable Música antes del Bloque", musica2);
+        {
+        let musica2 = "Pop";
+        console.log("Variable Música dentro del Bloque", musica2);
+        }
+        console.log("Variable Música después del Bloque", musica2);
+    </script>
+
+    <h2>4. Constantes (const)</h2>
+        <p>
+            //VARIABLE CONST <br>
+            // con la variable const si hace los cambios para los objetos y arreglos <br>
+            //OBJETO  <br>
+            const objeto = { <br>
+                nombre: "Cris", <br>
+                edad: 22 <br>
+            } <br>
+            //ARREGLO <br>
+            const colores = ["blanco","negro","azul"];<br>
+            
+            console.log(objeto);<br>
+            console.log(colores);<br>
+
+            objeto.correo = "margaret_1315@hotmail.com";<br>
+            colores.push("naranja");<br>
+
+            console.log(objeto);<br>
+            console.log(colores);
+        </p>
+    <script>
+        let a;
+        const PI= 3.1416;
+        //PI = 3;//PROHIBIDO CAMBIAR VALOR A UNA COSTANTE
+        //const NUEVE; //No permite constantes vacias
+        console.log(PI);
+
+        //VARIABLE LET
+      /*  //OBJETO
+        let objeto = {
+            nombre: "Cris",
+            edad: 22
+        }
+        //ARREGLO
+        let colores = ["blanco","negro","azul"];
+        
+        console.log(objeto);
+        console.log(colores);
+
+        objeto.correo = "margaret_1315@hotmail.com";
+        colores.push("naranja");
+
+        console.log(objeto);
+        console.log(colores);
+     */
+        //VARIABLE CONST
+        // con la variable const si hace los cambios para los objetos y arreglos
+        //OBJETO
+        const objeto = {
+            nombre: "Cris",
+            edad: 22
+        }
+        //ARREGLO
+        const colores = ["blanco","negro","azul"];
+        
+        console.log(objeto);
+        console.log(colores);
+
+        objeto.correo = "margaret_1315@hotmail.com";
+        colores.push("naranja");
+
+        console.log(objeto);
+        console.log(colores);
+   
+   </script>
+
+    <h2>5. Cadenas de texto (String)</h2>
+
+    <P>Aprenderse funciones para el manejo de strings</P>
+
+    <script>
+        let nombre = 'Cris';
+        let apelido = 'Calvario';
+        let saludo = new String("Hola Mundo");
+        let lorem = "       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, et dolorum. Adipisci sequi, voluptates accusamus earum magnam non pariatur odit consequuntur dicta modi. Quam soluta aliquid nam ea quod dolore.      ";
+        
+        console.log(nombre,apelido,saludo);
+        console.log(nombre.length,
+                    apelido.length,
+                    saludo.length);
+        console.log("----------------------");        
+        console.log(nombre.toUpperCase,
+                    apelido.toLowerCase);
+        console.log("----------------------");        
+        console.log( lorem.includes("amet"),
+                    lorem.includes("cris"),
+                    lorem,
+                    lorem.trim(),
+                    lorem.split(" "),
+                    lorem.split(","));
+
+
+    </script>
+
+    <h2>6. Template String</h2>
+    <p>Concatenación <br>Interpolcion de variables </p>
+
+   
+    <script>
+        console.log("*************************");
+        let nombre2 ='Cris';
+        let apellido = 'Calvario';  
+
+        //concatenación
+/*
+        let saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+        console.log(saludo);
+*/
+        //Interpolcion de variables
+        //Template String
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+        console.log(saludo2);
+        //******
+        let ul = "<ul>< li > Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul > ";
+        console.log(ul);
+        //Template String 
+        //Buena forma de imprimir String
+        let ul2 = `
+        <ul>
+            <li>Primavera</li>
+            <li>Verano</li>
+            <li>Otoño</li>
+            <li>Invierno</li>
+        </ul>`;
+        
+        console.log(ul2);
+        /*
+        let ul3 = "<ul>";
+        ul3 += "<li> Primavera</li>";
+        ul3 += "<li>Verano</li>";
+        ul3 += "<li>Otoño</li>";
+        ul3 += "<li>Invierno</li>";
+        ul3 += "</ul>";
+        console.log(ul3);*/
+    </script>
+
+    <h2>7. Números</h2>
+    <p>Apredenderse funciones para manejar numeros</p>
+    <script>
+    let a2 = 2;
+    let b = new Number(3);
+    let c = 7.19;
+    let d = "5.6";
+    console.log(a2, b);
+    console.log(c.toFixed(1));//aparecer cuantos numeros decimales queremos
+    console.log(c.toFixed(5));
+    console.log(parseInt(c));//convertir string a entero
+    console.log(parseFloat(c));// convertir string a flotante
+    console.log(typeof c, typeof d); // dicen que tipo son
+    console.log(a2 + b);
+    console.log(c + parseInt(d));
+    console.log(c + parseFloat(d));
+    console.log(c + Number.parseInt(d));
+    console.log(c + Number.parseFloat(d));
+
+    </script>
+
+    <h2>8. Booleans</h2>
+    <script>
+        let verdadero = true;
+        let falso = false;
+        let v = Boolean(true);
+        let f = Boolean(false);
+        console.log(verdadero, falso, v, f);
+        console.log(typeof verdadero, typeof falso);
+        console.log(Boolean(0));
+        console.log(Boolean(-7));
+        console.log(Boolean(""));
+        console.log(Boolean(" "));
+    </script>
+
+    <h2>9. Undefined, null & NaN</h2>
+
+    <script>
+        //undefined indica que no se ha inicializado una variable y que el valor está ausente
+        let indefinida;
+        console.log(indefinida);
+
+        //null es un valor especial que indica la ausencia de un valor
+         let nulo = null;
+        console.log(null);
+
+        //NaN - Not a Number
+        let noEsUnNumero = "hola" * 3.7;
+        console.log(noEsUnNumero);
+    </script>
+
+</body>
+</html>
