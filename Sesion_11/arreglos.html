@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos</title>
+</head>
+<body>
+    <h1>Arreglos o array</h1>
+
+    <p>Aprenderse metodos y atributos para manejar arreglos</p>
+
+    <script>
+        const a = [];//definir array
+        const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];//definir array con elementos
+        console.log(a);
+        console.log(b);
+        
+        console.log(b.length);//imprimir longitud
+        
+        //imprimir un valor especifico
+        console.log(b[2]);
+        console.log(b[0]);
+        console.log(b[3]);
+        
+        console.log(b[3][2]);//imprimir valor a profundidad
+        console.log(b[3][3][0]);
+        
+        const c = Array.of("X", "Y", "Z", 9, 8, 7);
+        console.log(c);
+        
+        const d = Array(100).fill(false);//llenar array con la funcion fill
+        console.log(d);
+        /* ya no se acostumbran
+        const e = new Array();
+        console.log(e);
+        
+        const f = new Array(1, 2, 3, true, false);
+        console.log(f);
+        */
+        
+        const colores = ["Rojo", "Verde", "Azul"];
+        console.log(colores);
+
+        colores.push("Negro");//agrega un elemento al final
+        console.log(colores);
+
+        colores.pop();//quita un elemento al final
+        console.log(colores);
+        
+        colores.forEach(function (el, index) {
+          console.log(`<li id="${index}">${el}</li>`);
+        })
+        //forEach = recibe una funcion que se ejecuta en forma de lista (para este caso)
+    </script>
+    
+</body>
+</html>
