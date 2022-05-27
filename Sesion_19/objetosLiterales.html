@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Literales</title>
+</head>
+<body>
+    <h1>Objetos Literales</h1>
+    <script>
+        //NUeva forma de crear atributos
+        let nombre = "Snoopy",
+        edad = 8;
+
+       /* const perro = {
+        nombre: nombre,
+        edad: edad,
+        ladrar: function () {
+            console.log("guauu guauu!!!")
+        }
+        }
+        //
+        console.log(perro);
+        perro.ladrar()*/
+        //
+        const dog = {
+        nombre,
+        edad,
+        raza: "Beagle",
+        ladrar() {
+            console.log("guauu guauu guauu!!!")
+        }
+        }
+        console.log(dog);
+        dog.ladrar();
+    </script>
+</body>
+</html>
