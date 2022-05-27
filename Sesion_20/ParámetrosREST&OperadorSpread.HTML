@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parámetros REST & Operador Spread</title>
+</head>
+<body>
+    <h1>Parámetros REST & Operador Spread</h1>
+    <script>
+        //REST
+        function sumar(a, b, ...c) {
+        //los 3 puntos hacen que se pueda agregar más valores
+            let resultado = a + b;
+            c.forEach(function (n) {
+                resultado += n
+            });
+            return resultado;
+        }
+        console.log(sumar(1, 2));
+        console.log(sumar(1, 2, 3));
+        console.log(sumar(1, 2, 3, 4));
+        console.log(sumar(1, 2, 3, 4, 5));
+        console.log(sumar(1, 2, 3, 4, 5, 6));
+        console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+        //Operador Spread
+        const arr1 = [1, 2, 3, 4, 5],
+        arr2 = [6, 7, 8, 9, 0];
+        console.log(arr1, arr2);
+        const arr3 = [...arr1, ...arr2];
+        //los 3 puntos haces que los valores de los arreglos se aguarde en una linea de un nuevo arreglo
+        console.log(arr3); 
+    </script>
+</body>
+</html>
