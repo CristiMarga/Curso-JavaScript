@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos estáticos, getters y setters</title>
+</head>
+<body>
+    <h1>Métodos estáticos, getters y setters</h1>
+    <script>
+        class Animal {
+      //el constructor es un método especial que se ejecuta en el momento de instanciar la clase
+      constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      //Métodos
+      sonar() {
+        console.log("Hago sonidos por que estoy vivo");
+      }
+      saludar() {
+        console.log(`Hola me llamo ${this.nombre}`);
+      }
+    }
+    class Perro extends Animal {
+      constructor(nombre, genero, tamanio) {
+        //con el método super() se manda a llamar el constructor de la clase padre
+        super(nombre, genero);
+        this.tamanio = tamanio;
+        this.raza = null;
+      }
+      sonar() {
+        console.log("Soy un perro y mi sonido es un ladrido");
+      }
+      ladrar() {
+        console.log("Guauuu Guauuu!!!");
+      }
+       //un método estático se pueden ejecutar sin necesidad de instanciar la clase
+       static queEres() {
+        console.log("Los perros somos animales mamíferos que pertenecemos a la familia de los caninos. Somos considerados los mejores amigos del hombre.");
+      }
+      //Los setters y getters son métodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+      get getRaza() {
+        return this.raza;
+      }
+      set setRaza(raza) {
+        this.raza = raza;
+      }
+    }
+
+    Perro.queEres();
+    const monimoni = new Animal("Monimoni","hembra"),
+              mickey = new Perro("Mickey","Macho","Pequeño","Shih Tzu");
+
+
+        console.log(monimoni);
+        console.log(mickey);
+        monimoni.sonar();
+        monimoni.saludar();
+        //monimoni.ladrar();
+        mickey.sonar();
+        mickey.saludar()
+        mickey.ladrar();
+
+        console.log(mickey.getRaza);
+        mickey.setRaza = "Shih Tzu";
+        console.log(mickey.getRaza);
+    </script>
+</body>
+</html>
