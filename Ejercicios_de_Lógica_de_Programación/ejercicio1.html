@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+<body>
+    <p>Ejercicios de Lógica de programación</p>
+    <script>
+         /* 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFunción("Hola Mundo") devolverá 10 */
+        
+        function contarCaracteres(frase = "") {
+            if(!frase){
+                console.warn("Cadena Vacía");
+            }else{
+                console.log(`la cadena: "${frase}" tiene ${frase.length} caracteres. `);
+            }
+        }
+        contarCaracteres("cristina margaret");
+        
+
+         /* 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFunción("Hola Mundo", 4) devolverá "Hola" */
+         console.log("***********Ejercicio 2****************");
+         function recortarTexto(frase = "",numCaracteres = undefined) {
+             
+            (!frase)
+            ? console.warn("Cadena Vacia")
+            : console.info(frase.substr(0,numCaracteres));//slice()
+            //let resultado = frase.substr(0,numCaracteres);
+    
+         }
+
+         recortarTexto("cristina",4);
+
+         
+         //console.log(`La cadena cortada es ${res}`);
+
+          /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
+            miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
+            console.log("***********Ejercicio 3****************");
+            const arrayLinea = (frase = "",separador = undefined) =>
+            (!frase)
+             ? console.warn("Cadena Vacia")
+             : (separador === undefined)
+                ? console.warn("NO ingresaste el separador")
+                : console.info(frase.split(separador));
+         
+         arrayLinea("Nothing about the way that you were treated ever seemed especially alarming 'til now"," ");
+         arrayLinea("hellor world");
+         /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
+         console.log("***********Ejercicio 4****************"); 
+         function repetir(frase = "",veces = undefined) {
+            if(!frase) return console.warn("No ingresaste un texto");
+
+            if (veces === undefined) return console.warn(" el numero de veces no puede ser ()");
+            
+            if (veces === 0) return console.error("el numero de veces no puede ser 0");
+
+            if (Math.sign(veces) === -1) return console.error("el numero de veces no puede ser negativo");
+            
+            for (let i=1; i<= veces; i++) console.info(`${frase},${i}`);
+
+         }
+
+         repetir("Hola Mundo",4);
+         repetir("hola mundo",0);
+
+    </script>
+</body>
+</html>
